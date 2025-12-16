@@ -1,0 +1,650 @@
+/* 高科技感折疊課程列表專用 CSS */
+#course-list .cl-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* 每一個課程卡片 */
+#course-list .cl-item {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 0;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(15, 35, 80, 0.08);
+  border: 1px solid rgba(160, 180, 230, 0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* 左側發光線條 */
+#course-list .cl-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #4f8dff, #9b5bff);
+  opacity: 0.7;
+}
+
+/* 展開／hover 時浮起 */
+#course-list .cl-item:hover,
+#course-list .cl-item.active {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(15, 35, 80, 0.16);
+  border-color: rgba(100, 140, 255, 0.8);
+}
+
+/* 標題列 */
+#course-list .cl-title {
+  padding: 18px 22px 18px 26px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  background: linear-gradient(90deg, rgb(102 206 255), rgb(2 31 95 / 98%));
+}
+
+/* 標題前的小標籤點 */
+#course-list .cl-title::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  margin-right: 10px;
+  background: radial-gradient(circle, #6072ab 0, #ffffff 60%, #ffffff 100%);
+  box-shadow: 0 0 8px rgba(79,141,255,0.9);
+}
+
+/* 標題右側箭頭 */
+#course-list .cl-title::after {
+  content: "▾";
+  color: #ffffff;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+#course-list .cl-title:hover::after {
+  color: #4f8dff;
+}
+
+/* 展開時箭頭旋轉 */
+#course-list .cl-item.active .cl-title::after {
+  transform: rotate(180deg);
+  color: #fff;
+}
+
+/* 折疊內容區 */
+#course-list .cl-content {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 24px;
+  overflow: hidden;
+  transition: max-height 0.45s ease, opacity 0.45s ease, padding 0.3s ease;
+  color: #374151;
+  background: linear-gradient(180deg, rgba(255,255,255,1), rgba(245,248,255,1));
+}
+
+#course-list .cl-content-inner {
+  padding: 14px 0 18px 0;
+}
+
+/* 文字 */
+#course-list .cl-content p {
+  margin: 0 0 10px 0;
+  line-height: 1.7;
+  font-weight: 700;
+}
+
+/* CTA 區塊 */
+#course-list .cl-cta-wrap {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end; /* 靠右對齊 */
+}
+
+/*  CTA 按鈕 */
+#course-list .cl-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(120deg, #4f8dff, #8f6bff, #4fd1ff);
+  background-size: 200% 100%;
+  box-shadow: 0 0 0 rgba(79,141,255,0.0);
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  transition: background-position 0.4s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+/* 按鈕光暈 */
+#course-list .cl-cta-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 0 0, rgba(255,255,255,0.7), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* 按鈕箭頭 */
+#course-list .cl-cta-btn span.cl-cta-arrow {
+  transition: transform 0.25s ease;
+}
+
+/* hover 效果 */
+#course-list .cl-cta-btn:hover {
+  background-position: 100% 0;
+  box-shadow: 0 0 16px rgba(79,141,255,0.7);
+  transform: translateY(-1px);
+}
+
+#course-list .cl-cta-btn:hover::before {
+  opacity: 1;
+}
+
+#course-list .cl-cta-btn:hover span.cl-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* 展開後狀態 */
+#course-list .cl-item.active .cl-content {
+  max-height: 700px; /* 可依實際文字增減 */
+  opacity: 1;
+  padding: 4px 24px 18px 24px;
+}
+
+/* 手機調整 */
+@media (max-width: 600px) {
+  body {
+    padding: 18px;
+  }
+  #course-list .cl-title {
+    font-size: 1.05rem;
+    padding: 16px 18px 16px 22px;
+  }
+  #course-list .cl-content {
+    padding: 0 18px;
+  }
+}
+
+
+
+#course-list .cl-section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0 0 32px 0;
+  letter-spacing: 1.5px;
+
+  /* 漸層科技字 */
+  background: linear-gradient(90deg, #4f8dff 0%, #8f6bff 50%, #4fd1ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* 下方光條 */
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+#course-list .cl-section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 120px;
+  height: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #4f8dff, #8f6bff);
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+tructor-section {
+  background: linear-gradient(90deg, #f7fbff 60%, #e8f4fb 100%);
+  padding: 48px 0 34px 0;
+  margin-top: 38px;
+}
+
+.instructor-grid {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px;
+  align-items: center;
+}
+
+.instructor-info {
+  /* 無需多餘設定 */
+}
+
+.instructor-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2177b1;
+  margin-bottom: 28px;
+  text-shadow: 0 0 3.5px #b2e7f7, 0 0 6px #b2e7f7;
+  letter-spacing: 1.5px;
+}
+
+.instructor-list {
+  position: relative;
+  padding-left: 2.1rem;
+  border-left: 3px solid #b8e0f9;
+  list-style: none;
+  margin: 0;
+}
+.instructor-list li {
+  position: relative;
+  margin-bottom: 12px;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: #15507c;
+  padding-left: 0.1em;
+}
+.instructor-list li b {
+  color: #074074;
+  font-size: 1.11rem;
+}
+/* 左側小點點 */
+.instructor-list li::before {
+  content: '';
+  position: absolute;
+  left: -1.35rem;
+  top: 0.52em;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#56c4e7 70%, #c0ebff 100%);
+  box-shadow: 0 1px 4px 0 #80d7ff60;
+  z-index: 1;
+}
+.instructor-list li:first-child::before,
+.instructor-list li:nth-child(5)::before {
+  background: linear-gradient(135deg, #ffd600 60%, #fffad0 100%);
+  box-shadow: 0 1px 4px #ffd60066;
+}
+
+.instructor-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.instructor-photo img {
+  width: 100%;
+  max-height: 380px;
+  border-radius: 16px;
+  box-shadow: 0 4px 26px #74c9ff38;
+  object-fit: cover;
+  background: #dff4fc;
+  border: 2.5px solid #c6e9ff;
+}
+
+@media (max-width: 900px) {
+  .instructor-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 12px;
+  }
+  .instructor-title {
+    font-size: 1.3rem;
+  }
+.instructor-photo img {
+    width: 70%;
+    min-width: 255px;
+}
+
+}
+
+.cl-content p {
+  white-space: pre-line;
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+#training-locations{
+  --c1:#4f8dff;
+  --c2:#8f6bff;
+  --c3:#4fd1ff;
+  --ink:#152033;
+  --soft:#f4f8ff;
+  padding: 44px 0 30px 0;
+}
+
+#training-locations .tl-wrap{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+#training-locations .tl-head{
+  /* text-align:center; */
+  margin-bottom: 22px;
+}
+
+#training-locations .tl-title{
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, var(--c1), var(--c2), var(--c3));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color: transparent;
+  display:inline-block;
+  position: relative;
+  padding-bottom: 8px;
+}
+#training-locations .tl-title::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  width: 120px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--c1), var(--c2));
+  opacity:.85;
+}
+
+#training-locations .tl-sub{
+  margin: 0;
+  color: #3b516f;
+  font-size: 1.02rem;
+}
+
+#training-locations .tl-grid{
+  display:grid;
+  grid-template-columns: 16% 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* 左側：城市晶片 */
+#training-locations .tl-cities{
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(160,180,230,.55);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(15, 35, 80, 0.08);
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 背景微粒 */
+#training-locations .tl-cities::before{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(79,141,255,.16), transparent 45%),
+    radial-gradient(circle at 70% 60%, rgba(143,107,255,.12), transparent 45%),
+    radial-gradient(circle at 35% 80%, rgba(79,209,255,.10), transparent 45%);
+  filter: blur(2px);
+  pointer-events:none;
+}
+
+#training-locations .tl-city{
+  position: relative;
+  width: 100%;
+  padding: 14px 14px 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(180,200,245,.65);
+  background: linear-gradient(180deg, #ffffff, #f6f9ff);
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: .6px;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .25s ease, border-color .25s ease;
+  margin-bottom: 10px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+/* 光掃過 */
+#training-locations .tl-city::after{
+  content:"";
+  position:absolute;
+  top:-20%;
+  left:-60%;
+  width: 55%;
+  height: 140%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent);
+  transform: skewX(-18deg);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+#training-locations .tl-city:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 0 16px rgba(79,141,255,.28);
+  border-color: rgba(100,140,255,.9);
+}
+#training-locations .tl-city:hover::after{ opacity: 1; animation: tlSweep 0.65s ease; }
+
+#training-locations .tl-city.is-active{
+  border-color: rgba(79,141,255,.95);
+  box-shadow: 0 0 0 4px rgba(79,141,255,.12), 0 10px 25px rgba(15, 35, 80, 0.10);
+  background: linear-gradient(90deg, rgba(79,141,255,.14), rgba(143,107,255,.10), rgba(79,209,255,.12));
+}
+
+#training-locations .tl-hint{
+  margin-top: 6px;
+  font-size: .92rem;
+  color: #476186;
+  opacity: .9;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes tlSweep{
+  from { transform: translateX(0) skewX(-18deg); }
+  to   { transform: translateX(240%) skewX(-18deg); }
+}
+
+/* 右側：資訊面板 */
+#training-locations .tl-panel{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(15, 35, 80, 0.10);
+  border: 1px solid rgba(160,180,230,.55);
+  background: rgba(255,255,255,.92);
+}
+
+/* 流動邊框 */
+#training-locations .tl-panel::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: linear-gradient(120deg, var(--c1), var(--c2), var(--c3), var(--c1));
+  background-size: 300% 300%;
+  animation: tlBorder 6s linear infinite;
+  opacity: .75;
+}
+#training-locations .tl-panel::after{
+  content:"";
+  position:absolute;
+  inset: 2px;
+  background: linear-gradient(180deg, #ffffff, #f6f9ff);
+  border-radius: 14px;
+}
+
+@keyframes tlBorder{
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+#training-locations .tl-panel-inner{
+  position: relative;
+  z-index: 1;
+  padding: 18px 18px 16px 18px;
+}
+
+/* 掃描線 */
+#training-locations .tl-panel-inner::before{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  top:-30%;
+  height: 40%;
+  background: linear-gradient(180deg, transparent, rgba(79,209,255,.18), transparent);
+  animation: tlScan 3.6s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes tlScan{
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  60% { opacity: 1; }
+  100% { transform: translateY(240%); opacity: 0; }
+}
+
+#training-locations .tl-badge{
+  display:inline-block;
+  font-weight: 900;
+  letter-spacing: .12em;
+  font-size: .78rem;
+  color: #2a4f86;
+  background: rgba(79,141,255,.12);
+  border: 1px solid rgba(79,141,255,.22);
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+#training-locations .tl-city-name{
+  margin: 0 0 14px 0;
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: #0f1d36;
+}
+
+#training-locations .tl-meta{
+  background: rgba(244,248,255,.9);
+  border: 1px solid rgba(180,200,245,.7);
+  border-radius: 14px;
+  padding: 12px 12px;
+}
+
+#training-locations .tl-row{
+  display:grid;
+  grid-template-columns: 70px 1fr;
+  gap: 10px;
+  padding: 8px 6px;
+}
+#training-locations .tl-row + .tl-row{
+  border-top: 1px dashed rgba(140,170,230,.55);
+}
+#training-locations .tl-k{
+  color: #2a4f86;
+  font-weight: 900;
+}
+#training-locations .tl-v{
+  color: #24344f;
+}
+
+#training-locations .tl-actions{
+  display:flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
+#training-locations .tl-btn{
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  color: #fff;
+  background: linear-gradient(120deg, var(--c1), var(--c2), var(--c3));
+  background-size: 200% 100%;
+  transition: transform .18s ease, box-shadow .25s ease, background-position .35s ease;
+}
+#training-locations .tl-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 0 16px rgba(79,141,255,.55);
+  background-position: 100% 0;
+}
+#training-locations .tl-btn-ghost{
+  background: transparent;
+  color: #1b3c70;
+  border: 1px solid rgba(120,150,220,.8);
+  box-shadow: none;
+}
+#training-locations .tl-btn-ghost:hover{
+  box-shadow: 0 0 14px rgba(79,141,255,.25);
+}
+
+@media (max-width: 900px){
+  #training-locations .tl-grid{ grid-template-columns: 1fr; }
+}
+
+
+
+/* ===== 上課地點：手機改成水平城市按鈕 ===== */
+@media (max-width: 900px) {
+  #training-locations .tl-cities {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 11px;
+    padding: 10px 2vw 6px 2vw;
+    /* 讓按鈕橫向 */
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+  #training-locations .tl-city {
+    margin-bottom: 0;
+    border-radius: 11px;
+    padding: 11px 0;
+    font-size: 1rem;
+    text-align: center;
+    min-width: 0;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 500px) {
+  #training-locations .tl-cities {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 8px;
+    /* 可讓按鈕更大 */
+  }
+}
+
+
