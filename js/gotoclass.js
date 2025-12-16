@@ -91,9 +91,9 @@ function renderCourseList() {
   if (!wrap) return;
   wrap.innerHTML = `
     <div class="cl-container">
-      <h2 class="cl-section-title">各類培訓課程</h2>
+      <h2 class="cl-section-title" data-aos="fade-up">各類培訓課程</h2>
       ${courseData.map(course => `
-        <div class="cl-item">
+        <div class="cl-item" data-aos="fade-up">
           <div class="cl-title">
             <span>${course.title}</span>
           </div>
@@ -120,10 +120,14 @@ function renderCourseList() {
       item.classList.toggle('active');
     });
   });
+
+  // 【重點】課程內容產生完後刷新 AOS，動畫才會有
+  if (typeof AOS !== 'undefined') {
+    setTimeout(()=>AOS.refresh(), 100);
+  }
 }
 
-document.addEventListener('DOMContentLoaded', renderCourseList);
-
-
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    renderCourseList();
+    if (typeof AOS !== 'undefined') AOS.init();
+});
