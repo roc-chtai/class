@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  color: #1b2333;
+  background: radial-gradient(circle at top left, #ffffff 0, #f3f7ff 40%, #e5f0ff 100%);
+}
+
 /* 高科技感折疊課程列表專用 CSS */
 #course-list .cl-container {
   max-width: 900px;
@@ -214,7 +222,8 @@
   opacity: 0.85;
 }
 
-tructor-section {
+
+.instructor-section {
   background: linear-gradient(90deg, #f7fbff 60%, #e8f4fb 100%);
   padding: 48px 0 34px 0;
   margin-top: 38px;
@@ -316,7 +325,6 @@ tructor-section {
 }
 
 
-</style>
 
 
 
@@ -331,7 +339,6 @@ tructor-section {
 
 
 
-<style>
 #training-locations{
   --c1:#4f8dff;
   --c2:#8f6bff;
@@ -646,5 +653,6 @@ tructor-section {
     /* 可讓按鈕更大 */
   }
 }
+
 
 
