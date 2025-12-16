@@ -1,56 +1,4 @@
-
-(function(){
-  const data = {
-    taoyuan:  { name:"桃園",   addr:"（請填寫桃園教室地址）",   map:"https://maps.google.com" },
-    hsinchu:  { name:"新竹",   addr:"（請填寫新竹教室地址）",   map:"https://maps.google.com" },
-    taichung: { name:"台中",   addr:"（請填寫台中教室地址）",   map:"https://maps.google.com" },
-    chiayi:   { name:"嘉義",   addr:"（請填寫嘉義教室地址）",   map:"https://maps.google.com" },
-    tainan:   { name:"台南",   addr:"（請填寫台南教室地址）",   map:"https://maps.google.com" },
-    kaohsiung:{ name:"高雄",   addr:"（請填寫高雄教室地址）",   map:"https://maps.google.com" }
-  };
-
-  const nameEl = document.getElementById("tlCityName");
-  const addrEl = document.getElementById("tlAddr");
-  const mapEl  = document.getElementById("tlMap");
-  const fbMsg  = "https://m.me/61576157353004";
-
-  document.querySelectorAll("#training-locations .tl-city").forEach(btn=>{
-    btn.addEventListener("mouseenter", ()=>btn.classList.add("is-hover"));
-    btn.addEventListener("mouseleave", ()=>btn.classList.remove("is-hover"));
-
-    btn.addEventListener("click", ()=>{
-      document.querySelectorAll("#training-locations .tl-city").forEach(b=>b.classList.remove("is-active"));
-      btn.classList.add("is-active");
-
-      const key = btn.getAttribute("data-city");
-      const d = data[key];
-      if(!d) return;
-
-      nameEl.textContent = d.name;
-      addrEl.textContent = d.addr;
-      mapEl.href = d.map;
-
-      const panel = document.querySelector("#training-locations .tl-panel-inner");
-      panel.style.transform = "translateY(2px)";
-      panel.style.opacity = "0.85";
-      setTimeout(()=>{ panel.style.transform="translateY(0)"; panel.style.opacity="1"; }, 120);
-    });
-  });
-
-  // 更新「了解更多」按鈕
-  const contactBtn = document.getElementById("tlContact");
-  if(contactBtn) {
-    contactBtn.textContent = "了解更多";
-    contactBtn.href = fbMsg;
-    contactBtn.target = "_blank";
-    contactBtn.rel = "noopener";
-  }
-})();
-
-
-
-
-// 課程資料清單
+// ====== 課程折疊功能 ======
 const courseData = [
   {
     title: "AI教師培育課程",
@@ -65,21 +13,21 @@ const courseData = [
     btn: "更多課程詳情",
     btnUrl: "https://roc-central-ai-edu.org/uploads/page/Summer/"
   },
-{
-  title: "懂行業AI模型訓練實戰：打造專屬數位孿生AI",
-  desc: "本課程系統帶你從零實作，學會如何利用數位孿生（DT）技術與LLM、GraphMERT、GNN等工具，訓練屬於自己的行業專屬AI模型。內容涵蓋：\n\n• 上游建設：領域知識文件蒐集、LLM知識萃取、種子知識圖(seed-KG)建構，進行行業型AI訓練。\n• 中游任務：運用自建模型閱讀應用文件、建構任務知識圖(task-KG)，進一步訓練GNN模型。\n• 下游應用：將GNN模型植入DT系統，打造行業智慧核心。\n• 實戰應用：結合強化學習，賦能AI機器人空間智慧，廣泛應用於醫療、無人機等多元產業。\n\n一步步帶領你，深入掌握AI在各行各業的落地訓練與應用關鍵。",
-  btn: "立即了解專屬AI訓練流程",
-  btnUrl: "https://roc-central-ai-edu.org/modules/tadnews/page.php?nsn=43&ncsn=7"
-}
+  {
+    title: "懂行業AI模型訓練實戰：打造專屬數位孿生AI",
+    desc: `本課程系統帶你從零實作，學會如何利用數位孿生（DT）技術與LLM、GraphMERT、GNN等工具，訓練屬於自己的行業專屬AI模型。內容涵蓋：
+
+• 上游建設：領域知識文件蒐集、LLM知識萃取、種子知識圖(seed-KG)建構，進行行業型AI訓練。
+• 中游任務：運用自建模型閱讀應用文件、建構任務知識圖(task-KG)，進一步訓練GNN模型。
+• 下游應用：將GNN模型植入DT系統，打造行業智慧核心。
+• 實戰應用：結合強化學習，賦能AI機器人空間智慧，廣泛應用於醫療、無人機等多元產業。
+
+一步步帶領你，深入掌握AI在各行各業的落地訓練與應用關鍵。`,
+    btn: "立即了解專屬AI訓練流程",
+    btnUrl: "https://roc-central-ai-edu.org/modules/tadnews/page.php?nsn=43&ncsn=7"
+  }
 ];
 
-
-
-
-
-
-
-// 自動產生課程卡片
 function renderCourseList() {
   const wrap = document.getElementById('course-list');
   if (!wrap) return;
@@ -106,7 +54,6 @@ function renderCourseList() {
       `).join('')}
     </div>
   `;
-
   // 點標題折疊展開
   wrap.querySelectorAll('.cl-title').forEach(function(title){
     title.addEventListener('click', function(){
@@ -115,15 +62,40 @@ function renderCourseList() {
     });
   });
 }
-
 document.addEventListener('DOMContentLoaded', renderCourseList);
 
+// ====== 上課地點切換 ======
+(function(){
+  const data = {
+    taoyuan:  { name:"桃園", addr:"（請填寫桃園教室地址）", map:"https://maps.google.com" },
+    hsinchu:  { name:"新竹", addr:"（請填寫新竹教室地址）", map:"https://maps.google.com" },
+    taichung: { name:"台中", addr:"（請填寫台中教室地址）", map:"https://maps.google.com" },
+    chiayi:   { name:"嘉義", addr:"（請填寫嘉義教室地址）", map:"https://maps.google.com" },
+    tainan:   { name:"台南", addr:"（請填寫台南教室地址）", map:"https://maps.google.com" },
+    kaohsiung:{ name:"高雄", addr:"（請填寫高雄教室地址）", map:"https://maps.google.com" }
+  };
+  const nameEl = document.getElementById("tlCityName");
+  const addrEl = document.getElementById("tlAddr");
+  const mapEl  = document.getElementById("tlMap");
 
-document.querySelectorAll('#course-list .cl-title').forEach(function(title){
-  title.addEventListener('click', function(){
-    const item = this.parentElement;
-    item.classList.toggle('active');
+  document.querySelectorAll("#training-locations .tl-city").forEach(btn=>{
+    btn.addEventListener("mouseenter", ()=>btn.classList.add("is-hover"));
+    btn.addEventListener("mouseleave", ()=>btn.classList.remove("is-hover"));
+    btn.addEventListener("click", ()=>{
+      document.querySelectorAll("#training-locations .tl-city").forEach(b=>b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      const key = btn.getAttribute("data-city");
+      const d = data[key];
+      if(!d) return;
+      nameEl.textContent = d.name;
+      addrEl.textContent = d.addr;
+      mapEl.href = d.map;
+      // 動畫
+      const panel = document.querySelector("#training-locations .tl-panel-inner");
+      panel.style.transform = "translateY(2px)";
+      panel.style.opacity = "0.85";
+      setTimeout(()=>{ panel.style.transform="translateY(0)"; panel.style.opacity="1"; }, 120);
+    });
   });
-});
-
+})();
 
