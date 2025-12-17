@@ -654,31 +654,35 @@ body {
   }
 }
 
+/* 初始狀態（畫面外） */
 .js-animate {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .6s ease, transform .6s ease;
+  transform: translateY(28px);
+  transition:
+    opacity .55s ease,
+    transform .55s ease;
+  will-change: opacity, transform;
 }
 
+/* 進場 */
 .js-animate.is-in {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* 左側進場 */
 .js-left {
-  transform: translateX(40px);
+  transform: translateX(42px);
 }
-
 .js-left.is-in {
   transform: translateX(0);
 }
 
+/* 縮放進場 */
 .js-zoom {
   transform: scale(.94);
 }
-
 .js-zoom.is-in {
   transform: scale(1);
 }
-
 
