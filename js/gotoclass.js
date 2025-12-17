@@ -41,21 +41,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ===== 課程清單 ===== */
-  const courseData = [
-    {
-      title: "AI教師培育課程",
-      desc: `掌握AI知識體系，精通生成式AI技能，熟悉AI PC功能。`,
-      btn: "更多課程詳情",
-      btnUrl: "https://roc-central-ai-edu.org/uploads/page/Summer/"
-    },
-    {
-      title: "懂行業AI模型訓練實戰：打造專屬數位孿生AI",
-      desc: "一步步帶你掌握行業專屬 AI 訓練流程。",
-      btn: "立即了解",
-      btnUrl: "https://roc-central-ai-edu.org/modules/tadnews/page.php?nsn=43&ncsn=7"
-    }
-  ];
+// 課程資料清單
+const courseData = [
+  {
+    title: "AI教師培育課程",
+    desc: `掌握AI知識體系，精通生成式AI技能，熟悉AI PC功能。帶領你成為推動AI教育的關鍵老師！
+
+本課程專為教育工作者設計，從AI基礎知識體系到進階生成式AI應用，
+系統化學習AI技術與AI PC實務，讓學員不僅能掌握最新科技趨勢，更能運用AI工具於教學現場。
+
+課程內容包含翻轉學習、做中學、協作創作與創新實踐，
+並結合 E-books、雲端訓練與實機操作，
+幫助教師輕鬆跨足AI教育領域，成為推動智慧校園的關鍵力量。`,
+    btn: "更多課程詳情",
+    btnUrl: "https://roc-central-ai-edu.org/uploads/page/Summer/"
+  },
+
+{
+  title: "懂行業AI模型訓練實戰：打造專屬數位孿生AI",
+  desc: "本課程系統帶你從零實作，學會如何利用數位孿生（DT）技術與LLM、GraphMERT、GNN等工具，訓練屬於自己的行業專屬AI模型。內容涵蓋：\n\n• 上游建設：領域知識文件蒐集、LLM知識萃取、種子知識圖(seed-KG)建構，進行行業型AI訓練。\n• 中游任務：運用自建模型閱讀應用文件、建構任務知識圖(task-KG)，進一步訓練GNN模型。\n• 下游應用：將GNN模型植入DT系統，打造行業智慧核心。\n• 實戰應用：結合強化學習，賦能AI機器人空間智慧，廣泛應用於醫療、無人機等多元產業。\n\n一步步帶領你，深入掌握AI在各行各業的落地訓練與應用關鍵。",
+  btn: "立即了解專屬AI訓練流程",
+  btnUrl: "https://roc-central-ai-edu.org/modules/tadnews/page.php?nsn=43&ncsn=7"
+}
+];
+;
 
   const wrap = document.getElementById('course-list');
   wrap.innerHTML = `
