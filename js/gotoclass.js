@@ -1,14 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ===== 入場動畫（取代 AOS） ===== */
+  /* ===== 入場 / 退場 ===== */
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         e.target.classList.add('is-in');
-        io.unobserve(e.target);
+      } else {
+        e.target.classList.remove('is-in');
       }
     });
-  }, { threshold: 0.15 });
+  }, {
+    threshold: 0.18
+  });
 
   document.querySelectorAll('.js-animate').forEach(el => io.observe(el));
 
