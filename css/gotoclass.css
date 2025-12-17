@@ -208,7 +208,7 @@ body {
   /* 下方光條 */
   position: relative;
   display: inline-block;
-  padding-bottom: 8px;
+  padding: 13px 0 8px 0;
 }
 
 #course-list .cl-section-title::after {
@@ -547,7 +547,7 @@ body {
   color: #2a4f86;
   background: rgba(79,141,255,.12);
   border: 1px solid rgba(79,141,255,.22);
-  padding: 6px 10px;
+  padding: 0px 10px;
   border-radius: 999px;
   margin: 18px;
 }
@@ -563,8 +563,8 @@ body {
   background: rgba(244,248,255,.9);
   border: 1px solid rgba(180,200,245,.7);
   border-radius: 14px;
-  padding: 12px 12px;
-  margin: 0px 5% 70px 5%;
+  padding: 8px 12px;
+  margin: 0px 5% 85px 5%;
 }
 
 #training-locations .tl-row{
