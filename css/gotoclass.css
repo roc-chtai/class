@@ -518,7 +518,7 @@ body {
 #training-locations .tl-panel-inner{
   position: relative;
   z-index: 1;
-  padding: 18px 18px 16px 18px;
+  height: 100%;
 }
 
 /* 掃描線 */
@@ -549,11 +549,11 @@ body {
   border: 1px solid rgba(79,141,255,.22);
   padding: 6px 10px;
   border-radius: 999px;
-  margin-bottom: 10px;
+  margin: 18px;
 }
 
 #training-locations .tl-city-name{
-  margin: 0 0 14px 0;
+  margin: 0 0 14px 5%;
   font-size: 1.55rem;
   font-weight: 900;
   color: #0f1d36;
@@ -564,6 +564,7 @@ body {
   border: 1px solid rgba(180,200,245,.7);
   border-radius: 14px;
   padding: 12px 12px;
+  margin: 0px 5% 70px 5%;
 }
 
 #training-locations .tl-row{
@@ -585,9 +586,10 @@ body {
 
 #training-locations .tl-actions{
   display:flex;
-  gap: 10px;
   justify-content: flex-end;
-  margin-top: 14px;
+  position: absolute;
+  right: 5%;
+  bottom: 15px;
 }
 
 #training-locations .tl-btn{
@@ -656,35 +658,31 @@ body {
   }
 }
 
-/* 初始狀態（畫面外） */
 .js-animate {
   opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity .55s ease,
-    transform .55s ease;
-  will-change: opacity, transform;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
 }
 
-/* 進場 */
 .js-animate.is-in {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* 左側進場 */
 .js-left {
-  transform: translateX(42px);
+  transform: translateX(40px);
 }
+
 .js-left.is-in {
   transform: translateX(0);
 }
 
-/* 縮放進場 */
 .js-zoom {
   transform: scale(.94);
 }
+
 .js-zoom.is-in {
   transform: scale(1);
 }
+
 
