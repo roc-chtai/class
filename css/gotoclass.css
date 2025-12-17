@@ -4,6 +4,8 @@ body {
   font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
   color: #1b2333;
   background: radial-gradient(circle at top left, #ffffff 0, #f3f7ff 40%, #e5f0ff 100%);
+    overflow-x: hidden;
+
 }
 
 /* 高科技感折疊課程列表專用 CSS */
