@@ -654,5 +654,31 @@ body {
   }
 }
 
+.js-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.js-animate.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-left {
+  transform: translateX(40px);
+}
+
+.js-left.is-in {
+  transform: translateX(0);
+}
+
+.js-zoom {
+  transform: scale(.94);
+}
+
+.js-zoom.is-in {
+  transform: scale(1);
+}
 
 
