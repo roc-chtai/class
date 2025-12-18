@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 30px;
+  padding: 0 30px;
   font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
   color: #1b2333;
   background: radial-gradient(circle at top left, #ffffff 0, #f3f7ff 40%, #e5f0ff 100%);
