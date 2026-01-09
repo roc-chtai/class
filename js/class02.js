@@ -77,14 +77,4 @@ document.addEventListener('DOMContentLoaded', () => {
     )
   );
 });
-
-
-document.addEventListener('click', function (e) {
-  const title = e.target.closest('.ia-local-item .cl-title');
-  if (!title) return;
-
-  const item = title.closest('.ia-local-item');
-  if (!item) return;
-
-  item.classList.toggle('is-open');
-});
+;
