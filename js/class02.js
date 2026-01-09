@@ -77,4 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
     )
   );
 });
-;
+
+document.querySelectorAll('.ia-local-item .cl-title')
+  .forEach(title=>{
+    title.addEventListener('click', ()=>{
+      title.parentElement.classList.toggle('is-open');
+    });
+  });
+
