@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 🔽 新增的「課程用書」項目
   {
     title: "課程用書｜《懂行業 AI 的開發實務》（共三冊）",
-    image: "book-cover-placeholder.jpg",
+    image: "https://roc-chtai.github.io/class/imges/bookx3.png",
     desc: "本課程指定教材為《懂行業 AI 的開發實務》系列書籍。\n\n全系列共三冊，內容聚焦於如何從產業脈絡出發，建立真正懂行業的 AI 模型。\n\n教材將搭配課堂講解與實作操作使用，協助學員在理解概念的同時，完成實際建模流程。",
     btn: "教材試閱",
     btnUrl: "#"
