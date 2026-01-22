@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: "懂行業AI模型訓練實戰：打造專屬數位孿生AI",
       desc: "本課程系統帶你從零實作，學會如何利用數位孿生（DT）技術與LLM、GraphMERT、GNN等工具，訓練屬於自己的行業專屬AI模型。內容涵蓋：\n\n• 上游建設：領域知識文件蒐集、LLM知識萃取、種子知識圖(seed-KG)建構，進行行業型AI訓練。\n• 中游任務：運用自建模型閱讀應用文件、建構任務知識圖(task-KG)，進一步訓練GNN模型。\n• 下游應用：將GNN模型植入DT系統，打造行業智慧核心。\n• 實戰應用：結合強化學習，賦能AI機器人空間智慧，廣泛應用於醫療、無人機等多元產業。\n\n一步步帶領你，深入掌握AI在各行各業的落地訓練與應用關鍵。",
       btn: "立即了解專屬AI訓練流程",
-      btnUrl: "https://roc-chtai.github.io/class/02"
+      btnUrl: "#"
      },
 
   // 🔽 新增的「課程用書」項目
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     image: "https://roc-chtai.github.io/class/imges/bookx3.png",
     desc: "本課程指定教材為《懂行業 AI 的開發實務》系列書籍。\n\n全系列共三冊，內容聚焦於如何從產業脈絡出發，建立真正懂行業的 AI 模型。\n\n教材將搭配課堂講解與實作操作使用，協助學員在理解概念的同時，完成實際建模流程。",
     btn: "教材試閱",
-    btnUrl: "#"
+    btnUrl: "https://roc-central-ai-edu.org/modules/tad_uploader/index.php?of_cat_sn=9"
   },
 
   // 🔽 新增的「課程介紹」項目
