@@ -1,6 +1,12 @@
 const books = [
-  { title: "AI應用規劃師-中級 應鑑指南 大數據處理", desc: "1.全面涵蓋核心技術：從自然語言處理（NLP）、生成式AI、到電腦視覺與多模態應用，完整架構AI知識體系。<br>2.理論與實務並進：不只講解LLM、RAG等前沿技術，更深入探討AI導入評估、風險管理及系統部署流程。<br>3.大數據分析觀念和技術：詳述大數據收集、清理、分析及可視化，掌握AI專案的導入開發流程，並探討隱私保護與合規性。<br>4.大數據與機器學習整合：熟悉如何規劃大數據成為AI模型的優質燃料，大幅提升機器學習的效益。<br>5.完整對應iPAS－AI應用規劃師能力鑑定的最新命題方向，並結合AIE人工智慧專業能力國際認證：BDAE大數據應用工程師的核心知識架構。", img: "https://roc-chtai.github.io/class/imges/IAPADATA.jpg" },
-  { title: "AI應用規劃師-中級 應鑑指南 機器學習", desc: "1.完整知識架構：涵蓋AI基礎概念、機器學習、深度學習、生成式AI、多模態AI與大數據應用。<br>2.理論與實務並重：結合理論講解、實務案例與操作流程，培養實際應用能力。<br>3.掌握AI模型的架構和推理行為：建立優秀的模型建構、訓練與調校的能力。<br>4.導入規劃導向：包含AI專案評估、POC驗證、模型選擇、資料準備與部署流程；並重視AI治理、風險管理與國際治理規範。<br>5.大量範例與圖解：透過圖表與情境說明，降低學習門檻、提升理解效率。<br>6.完整對應IPAS－AI應用規劃師能力鑑定的最新命題方向，並結合AIE人工智慧專業能力國際認證：MLAE機器學習應用工程師的核心知識架構。", img: "https://roc-chtai.github.io/class/imges/IPASROBOTO.jpg" }
+  { title: "AI應用規劃師-中級 應鑑指南 大數據處理", desc: "全面涵蓋核心技術：從自然語言處理（NLP）、生成式AI、到電腦視覺與多模態應用，完整架構AI知識體系。", img: "https://roc-chtai.github.io/class/imges/IAPADATA.jpg" },
+  { title: "AI應用規劃師-中級 應鑑指南 機器學習", desc: "完整知識架構：涵蓋AI基礎概念、機器學習、深度學習、生成式AI、多模態AI與大數據應用。", img: "https://roc-chtai.github.io/class/imges/IPASROBOTO.jpg" },
+  { title: "大數據處理分析與應用 重點精華", desc: "IPAS中級 大數據處理", img: "https://roc-chtai.github.io/class/imges/dadonhiDATA.png" },
+  { title: "機器學習技術與應用 重點精華", desc: "IPAS中級 機器學習 ", img: "https://roc-chtai.github.io/class/imges/dadonhiROBOTO.png" },
+  { title: "生成式AI.應用與規劃 重點精華", desc: "IPAS初級 一學就通", img: "https://roc-chtai.github.io/class/imges/IPASA01.png" },
+  { title: "人工智慧基礎概論 重點精華", desc: "IPAS初級 一學就通", img: "https://roc-chtai.github.io/class/imges/IPASA02.png" },
+  { title: "生成式AI應用與規劃 精修", desc: "IPAS初級 一學就通", img: "https://roc-chtai.github.io/class/imges/IPASA03.png" },
+  { title: "人工智慧基礎概論 精修", desc: "IPAS中級 大數據處理", img: "https://roc-chtai.github.io/class/imges/IPASA04.png" }
 ];
 
 // ------ 輪播區塊 ------
