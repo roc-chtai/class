@@ -1,8 +1,18 @@
     // 填入YouTube ID即可
     const ytIds = [
       "zTx5quF2H44",
-      "pA-e602CT_k",
-      "gfQP4Wl4k80"
+      "RO-FHJM0400",
+      "C92daTVOTlM",
+      "tqZI0V9A5LE",
+      "5RiF784TCbY",
+      "PLUf-s85w1U",
+      "TT2CPcM8cjc",
+      "9AcxH5TVpGg",
+      "GE-eYuiwlW4",
+      "PrR2KVKYnOg",
+      "ePtD4poYZyk",
+      "LgS7C9l_qmw",
+      "zL2pI0H55lk"
     ];
     async function fetchVideoInfo(id) {
       const url = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}&format=json`;
