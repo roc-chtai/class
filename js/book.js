@@ -1,6 +1,6 @@
 const books = [
-  { title: "AI應用規劃師-中級 應鑑指南 大數據處理", desc: "全面涵蓋核心技術：從自然語言處理（NLP）、生成式AI、到電腦視覺與多模態應用，完整架構AI知識體系。", img: "https://roc-chtai.github.io/class/imges/IAPADATA.jpg", buyUrl: "#" },
-  { title: "AI應用規劃師-中級 應鑑指南 機器學習", desc: "完整知識架構：涵蓋AI基礎概念、機器學習、深度學習、生成式AI、多模態AI與大數據應用。", img: "https://roc-chtai.github.io/class/imges/IPASROBOTO.jpg", buyUrl: "#" },
+  { title: "AI應用規劃師-中級 應鑑指南 大數據處理", desc: "全面涵蓋核心技術：從自然語言處理（NLP）、生成式AI、到電腦視覺與多模態應用，完整架構AI知識體系。", img: "https://roc-chtai.github.io/class/imges/IAPADATA.jpg", buyUrl: "https://tkdbook.jyic.net/PG623" },
+  { title: "AI應用規劃師-中級 應鑑指南 機器學習", desc: "完整知識架構：涵蓋AI基礎概念、機器學習、深度學習、生成式AI、多模態AI與大數據應用。", img: "https://roc-chtai.github.io/class/imges/IPASROBOTO.jpg", buyUrl: "https://tkdbook.jyic.net/PG622" },
   { title: "大數據處理分析與應用 重點精華", desc: "IPAS中級 大數據處理", img: "https://roc-chtai.github.io/class/imges/dadonhiDATA.png", buyUrl: "https://www.dadonhi.com/load_page/get_product_list/58/246" },
   { title: "機器學習技術與應用 重點精華", desc: "IPAS中級 機器學習 ", img: "https://roc-chtai.github.io/class/imges/dadonhiROBOTO.png", buyUrl: "https://www.dadonhi.com/load_page/get_product_list/58/246" },
   { title: "生成式AI.應用與規劃 重點精華", desc: "IPAS初級 一學就通", img: "https://roc-chtai.github.io/class/imges/IPASA01.png", buyUrl: "https://www.dadonhi.com/load_page/get_product_list/58/245" },
