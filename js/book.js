@@ -6,7 +6,7 @@ const books = [
   { title: "生成式AI.應用與規劃 重點精華", desc: "IPAS初級 一學就通", img: "https://roc-chtai.github.io/class/imges/IPASA01.png", buyUrl: "https://www.dadonhi.com/load_page/get_product_list/58/245" },
   { title: "人工智慧基礎概論 重點精華", desc: "IPAS初級 一學就通", img: "https://roc-chtai.github.io/class/imges/IPASA02.png", buyUrl: "https://www.dadonhi.com/load_page/get_product_list/58/245" },
   { title: "生成式AI應用與規劃 精修", desc: "IPAS初級 一學就通", img: "https://roc-chtai.github.io/class/imges/IPASA03.png", buyUrl: "https://www.dadonhi.com/load_page/get_product_list/58/245" },
-  { title: "人工智慧基礎概論 精修", desc: "IPAS中級 大數據處理", img: "https://roc-chtai.github.io/class/imges/IPASA04.png", buyUrl: "https://www.dadonhi.com/load_page/get_product_list/58/245" }
+  { title: "人工智慧基礎概論 精修", desc: "IPAS初級 一學就通", img: "https://roc-chtai.github.io/class/imges/IPASA04.png", buyUrl: "https://www.dadonhi.com/load_page/get_product_list/58/245" }
 ];
 
 // ------ 輪播區塊 ------
